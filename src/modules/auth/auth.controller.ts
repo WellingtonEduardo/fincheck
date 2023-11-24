@@ -1,8 +1,11 @@
 import { Body, Controller, Post } from '@nestjs/common';
+
+import { IsPublic } from 'src/shared/decorators/IsPublic';
 import { AuthService } from './auth.service';
 import { SignupDto } from './dto/signup.dto';
 import { SignInDto } from './dto/Sign-In.dto';
 
+@IsPublic()
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
@@ -13,7 +16,7 @@ export class AuthController {
   }
 
   @Post('signup')
-  create(@Body() signupDto: SignupDto) {
+  signup(@Body() signupDto: SignupDto) {
     return this.authService.signup(signupDto);
   }
 }
