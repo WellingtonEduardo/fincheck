@@ -1,4 +1,3 @@
-import { UsersRepository } from 'src/shared/database/repositories/users.repository';
 import {
   ConflictException,
   Injectable,
@@ -8,6 +7,7 @@ import { compare, hash } from 'bcryptjs';
 import { JwtService } from '@nestjs/jwt';
 import { SignupDto } from './dto/signup.dto';
 import { SignInDto } from './dto/Sign-In.dto';
+import { UsersRepository } from '../../shared/database/repositories/users.repository';
 
 @Injectable()
 export class AuthService {

@@ -1,11 +1,12 @@
 import { Injectable } from '@nestjs/common';
-import { ValidateBankAccountOwnershipService } from 'src/modules/bank-accounts/services/validate-Bank-account-ownership.service';
-import { ValidateCategoryOwnershipService } from 'src/modules/categories/services/validate-category-ownership.service';
-import { TransactionsRepository } from 'src/shared/database/repositories/transactions.repository';
+
 import { CreateTransactionDto } from '../dto/create-transaction.dto';
 import { UpdateTransactionDto } from '../dto/update-transaction.dto';
 import { ValidateTransactionOwnershipService } from './validate-transaction-ownership.service';
 import { TransactionType } from '../entities/Transaction';
+import { TransactionsRepository } from '../../../shared/database/repositories/transactions.repository';
+import { ValidateBankAccountOwnershipService } from '../../bank-accounts/services/validate-bank-account-ownership.service';
+import { ValidateCategoryOwnershipService } from '../../../modules/categories/services/validate-category-ownership.service';
 
 @Injectable()
 export class TransactionsService {

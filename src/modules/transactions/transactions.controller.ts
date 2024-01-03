@@ -14,11 +14,13 @@ import {
 } from '@nestjs/common';
 import { CreateTransactionDto } from './dto/create-transaction.dto';
 import { UpdateTransactionDto } from './dto/update-transaction.dto';
-import { ActiveUserId } from 'src/shared/decorators/ActiveUserId';
+
 import { TransactionsService } from './services/transactions.service';
-import { OptionalParseUUIDPipe } from 'src/shared/pipes/OptionalParseUUIDPipe';
+
 import { TransactionType } from './entities/Transaction';
-import { OptionalParseEnumPipe } from 'src/shared/pipes/OptionalParseEnumPipe';
+import { ActiveUserId } from '../../shared/decorators/ActiveUserId';
+import { OptionalParseUUIDPipe } from '../../shared/pipes/OptionalParseUUIDPipe';
+import { OptionalParseEnumPipe } from '../../shared/pipes/OptionalParseEnumPipe';
 
 @Controller('transactions')
 export class TransactionsController {

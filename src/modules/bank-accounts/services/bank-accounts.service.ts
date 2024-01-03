@@ -2,7 +2,7 @@ import { BankAccountsRepository } from '../../../shared/database/repositories/ba
 import { Injectable } from '@nestjs/common';
 import { CreateBankAccountDto } from '../dto/create-bank-account.dto';
 import { UpdateBankAccountDto } from '../dto/update-bank-account.dto';
-import { ValidateBankAccountOwnershipService } from './validate-Bank-account-ownership.service';
+import { ValidateBankAccountOwnershipService } from '../../bank-accounts/services/validate-bank-account-ownership.service';
 
 @Injectable()
 export class BankAccountsService {
